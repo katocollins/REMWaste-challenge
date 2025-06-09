@@ -6,7 +6,7 @@ This project is a complete redesign of the **"Choose Your Skip Size"** page from
 
 ## 🔗 Live Demo
 
-👉 [View Live on Vercel](https://your-vercel-link.vercel.app)  
+👉 [View Live on Vercel](https://rem-waste-challenge-zeta.vercel.app/)  
 👉 [Figma Design](https://your-figma-design-link.com)
 
 ---
