@@ -5,13 +5,15 @@ const useSkipData = (postcode = "NR32", area = "Lowestoft") => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const API_URL = import.meta.env.VITE_SKIP_API_URL;
+
   const fetchSkips = async () => {
     try {
       setLoading(true);
       setError(null);
 
       const response = await fetch(
-        `https://app.wewantwaste.co.uk/api/skips/by-location?postcode=${postcode}&area=${area}`,
+        `${API_URL}?postcode=${postcode}&area=${area}`,
         {
           method: "GET",
           headers: {
@@ -26,7 +28,7 @@ const useSkipData = (postcode = "NR32", area = "Lowestoft") => {
 
       const data = await response.json();
 
-      // Sort skips by size for better user experience
+      // Sort skips by size
       const sortedSkips = data.sort((a, b) => a.size - b.size);
       setSkips(sortedSkips);
     } catch (err) {
@@ -76,3 +78,4 @@ const useSkipData = (postcode = "NR32", area = "Lowestoft") => {
 };
 
 export default useSkipData;
+
